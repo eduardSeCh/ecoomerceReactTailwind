@@ -1,6 +1,8 @@
-function SignIn() {
+import Layout from '../../Components/Layout'
+
+function SignIn () {
   return (
-    <div>SignIn</div>
+    <Layout>SignIn</Layout>
   )
 }
 

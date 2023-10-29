@@ -1,11 +1,11 @@
 module.exports = {
-  extends: ['standard'],
+  extends: ['standard', 'standard-jsx'],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2022,
     sourceType: 'module'
   },
   env: {
     browser: true,
-    es2020: true
+    es2022: true
   }
 }

@@ -1,6 +1,8 @@
-function MyAccount() {
+import Layout from '../../Components/Layout'
+
+function MyAccount () {
   return (
-    <div>MyAccount</div>
+    <Layout>MyAccount que la...</Layout>
   )
 }
 
