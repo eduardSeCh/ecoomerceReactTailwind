@@ -1,6 +1,11 @@
+import { HiOutlineShoppingBag } from 'react-icons/hi'
 import { NavLink } from 'react-router-dom'
+import { ShoppingCartContext } from '../../Context'
+import { useContext } from 'react'
 
 function Navbar () {
+  const { count } = useContext(ShoppingCartContext)
+
   const activeStyle = 'underline underline-offset-4'
 
   const routesLeft = []
@@ -17,11 +22,11 @@ function Navbar () {
   routesRight.push({ to: '/sign-in', label: 'Sign In' })
 
   return (
-    <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light">
+    <nav className='flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light'>
 
-      <ul className="flex items-center gap-3">
-        <li className="font-semibold text-lg">
-          <NavLink to="/">Shopi</NavLink>
+      <ul className='flex items-center gap-3'>
+        <li className='font-semibold text-lg'>
+          <NavLink to='/'>Shopi</NavLink>
         </li>
         {routesLeft.map((route) => (
           <li key={route.to}>
@@ -35,8 +40,8 @@ function Navbar () {
         ))}
       </ul>
 
-      <ul className="flex items-center gap-3">
-        <li className="text-black/60">teff@platzi.com</li>
+      <ul className='flex items-center gap-3'>
+        <li className='text-black/60'>teff@platzi.com</li>
         {routesRight.map((route) => (
           <li key={route.to}>
             <NavLink
@@ -47,7 +52,9 @@ function Navbar () {
             </NavLink>
           </li>
         ))}
-        <li>🛒 0</li>
+        <li className='flex content-between items-center'>
+          <HiOutlineShoppingBag className='text-lg m-1' /> {count}
+        </li>
       </ul>
 
     </nav>
